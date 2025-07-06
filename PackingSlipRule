@@ -1,0 +1,16 @@
+package com.business.rules.rules;
+
+import com.business.rules.model.Order;
+import com.business.rules.model.ProductType;
+
+public class PackingSlipRule implements Rule {
+    @Override
+    public boolean isApplicable(Order order) {
+        return order.getProductType() == ProductType.PHYSICAL_PRODUCT;
+    }
+
+    @Override
+    public void apply(Order order) {
+        System.out.println("Generated packing slip for: " + order.getProductName());
+    }
+}
