@@ -1,0 +1,8 @@
+package com.business.rules.rules;
+
+import com.business.rules.model.Order;
+
+public interface Rule {
+    boolean isApplicable(Order order);
+    void apply(Order order);
+}
