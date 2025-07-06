@@ -1,0 +1,9 @@
+package com.business.rules.model;
+
+public enum ProductType {
+    PHYSICAL_PRODUCT,
+    BOOK,
+    VIDEO,
+    MEMBERSHIP,
+    MEMBERSHIP_UPGRADE
+}
