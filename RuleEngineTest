@@ -1,0 +1,19 @@
+package com.business.rules.tests;
+
+import com.business.rules.engine.RuleEngine;
+import com.business.rules.model.Order;
+import com.business.rules.model.ProductType;
+import com.business.rules.rules.PackingSlipRule;
+import org.junit.jupiter.api.Test;
+
+class RuleEngineTest {
+
+    @Test
+    void testPackingSlipRule() {
+        Order order = new Order(ProductType.PHYSICAL_PRODUCT, "Printer");
+        RuleEngine engine = new RuleEngine();
+        engine.addRule(new PackingSlipRule());
+        engine.process(order);
+        // Should output: Generated packing slip for: Printer
+    }
+}
